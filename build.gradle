@@ -6,7 +6,6 @@ allprojects {
     apply plugin: 'java'
     apply plugin: 'io.qameta.allure'
 
-
     defaultTasks "clean", "test"
 
     sourceCompatibility = JavaVersion.VERSION_11
@@ -40,6 +39,10 @@ repositories {
     }
 }
 
+configurations {
+    agent
+}
+
 
 dependencies {
 
@@ -60,6 +63,9 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-gradle:2.7.0'
     testImplementation 'io.qameta.allure:allure-testng:2.9.0'
     testImplementation 'io.qameta.allure:allure-selenide:2.9.0'
+
+    agent 'org.aspectj:aspectjweaver:1.9.2'
+    testImplementation 'org.aspectj:aspectjweaver:1.9.2'
 
 }
 
@@ -100,5 +106,5 @@ allure {
     version = '2.9.0'
     autoconfigure = true
     aspectjweaver = true
-//    allureJavaVersion = 2.0
+//    allureJavaVersion = 2.0-BETA10
 }

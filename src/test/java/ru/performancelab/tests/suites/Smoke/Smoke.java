@@ -1,6 +1,7 @@
 package ru.performancelab.tests.suites.Smoke;
 
 
+import io.qameta.allure.Step;
 import org.testng.annotations.Test;
 import io.qameta.allure.Description;
 import org.testng.annotations.BeforeClass;
@@ -27,6 +28,7 @@ public class Smoke extends BaseTest {
 
     @Description("Описание метода 'checkStartPageDisplaying'")
     @Test(description="Проверка отображения стартовой страницы")
+    @Step("Шаг - метод 'checkStartPageDisplaying'")
     public void checkStartPageDisplaying() {
         log.debug(String.format("Start method: %s", Thread.currentThread().getStackTrace()[1].getMethodName()));
         StartPage startPage = new StartPage();
